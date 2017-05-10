@@ -16,11 +16,6 @@
 });*/
 
 
-
-
-
-
-
 Route::get('/',['uses'=>'PageController@index']);
 Route::get('/home',['as'=>'home','uses'=>'PageController@index']);
 Route::get('/about',['uses'=>'PageController@about']);
@@ -30,7 +25,6 @@ Route::get('/map',['uses'=>'PageController@map']);
 Route::get('/dashboard',function(){
 return view('dashboard');
 });
-
 
 
 //Route::get('/register','RegistrationController@register');
