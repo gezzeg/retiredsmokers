@@ -50,7 +50,7 @@
     <div id="over_map">
       <div id="panel">
         <h3>HEADER</h3>
-        <input id="" type="text" placeholder="Search Box">
+        <input id="" type="text" placeholder="Search Box"> <input type="button" />
       </div>
     </div>
 
