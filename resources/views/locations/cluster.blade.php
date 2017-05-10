@@ -41,7 +41,7 @@
   </head>
   <body>
    
-<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<input id="pac-input" class="controls" type="text" placeholder="Search Box"> <input type="button" name="button" value="button"/>
     
     <div id="map"></div>
   
@@ -50,7 +50,7 @@
     <div id="over_map">
       <div id="panel">
         <h3>HEADER</h3>
-        <input id="" type="text" placeholder="Search Box"> <input type="button" name="button" value="button"/>
+        <input id="" type="text" placeholder="Search Box"> 
       </div>
     </div>
 
