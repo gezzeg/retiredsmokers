@@ -170,7 +170,6 @@ class ProfileController extends Controller
 
         //Profile::where('user_id', $id)->update($request->all());
 
-
     }
 
     /**
