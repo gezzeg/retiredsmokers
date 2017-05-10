@@ -51,7 +51,7 @@ class ForgotPasswordController extends Controller
     		'user'=>$user,
     		'code'=>$code
     		],function($message) use ($user){
-    			$message->from(env('MAIL_USERNAME'),'RetiredSmokers.org');
+    			$message->from(env('MAIL_USERNAME'),'RetiredSmokers.com');
     			$message->to($user->email);
     			$message->subject("Hello $user->first_name, reset your password.");
     		}

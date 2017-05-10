@@ -129,7 +129,7 @@ class RegistrationController extends Controller
 		Mail::send('emails.activation',
 			['user'=>$user,'activationCode'=>$activationCode], 
 			function($message) use ($user){
-				$message->from(env('MAIL_USERNAME'),'RetiredSmokers.org');
+				$message->from(env('MAIL_USERNAME'),'RetiredSmokers.com');
 				$message->to($user->email);
 				$message->subject("Hello $user->first_name, activate your account.");
 
