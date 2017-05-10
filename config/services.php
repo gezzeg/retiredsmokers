@@ -15,7 +15,7 @@ return [
     */
 
     'mailgun' => [
-        'domain' => env('sandboxdffbfbee16724d7c80ec1daf6db3d1c4.mailgun.org'),
+        'domain' => env('mail.retiredsmokers.com'),
         'secret' => env('key-e4979301a04a14ddd508106c6a454700'),
     ],
 
