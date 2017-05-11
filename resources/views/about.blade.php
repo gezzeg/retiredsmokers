@@ -18,8 +18,10 @@
 
       </div>
       <div class="panel-body">
+
+<p>      <img src="{{ url('/')}}/images/logo-retiredsmokers-badge.png" style="width: 300px; height:300px;"></p>
         
-        RetiredSmokers.com establish on 2013 is a Malaysian group of x-smokers who support each other who interested to quit smoking.
+        <p>RetiredSmokers.com establish on 2013 is a Malaysian group of x-smokers who support each other who interested to quit smoking.</p>
 
         <h4>Medium</h4>
 

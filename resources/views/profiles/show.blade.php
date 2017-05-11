@@ -28,6 +28,8 @@
 
   {{-- Error --}}
 
+{{-- Avatar --}}
+
   <div class="col-md-3">
     <div class="panel panel-primary">
       
@@ -37,11 +39,13 @@
 
       </div>
       <div class="panel-body">
-      <img class="text-center" src="test.jpg" width="100px" height="100px" class="img-circle">
+      <!-- <img class="text-center" src="test.jpg" width="100px" height="100px" class="img-circle"> -->
+      <img src="{{ url('/')}}/uploads/avatars/{{ $userProfile->avatar }}" style="">
       </div>
     </div>
   </div>  
       
+{{-- Avatar --}}
 
   <div class="col-md-9">
     <div class="panel panel-primary">
@@ -129,6 +133,7 @@
   </div>
 
 {{-- Profile --}}
+
  {{-- Location --}}
 
   <div class="col-md-6">

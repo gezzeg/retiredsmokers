@@ -36,7 +36,12 @@
                         <ul class="dropdown-menu" role="menu">
                  
                  <!-- Profile -->
-                <li role="presentation" {{{ (Request::is('profile') ? 'class=active' : '') }}}><a href="{{url('profile/'.Sentinel::getUser()->getUserId()) }}">Profile</a></li>  
+                
+              {{--  <li role="presentation" {{{ (Request::is('profile') ? 'class=active' : '') }}}><a href="{{url('profile/'.Sentinel::getUser()->getUserId()) }}">Profile</a></li>  
+                 
+--}}<li role="presentation" {{{ (Request::is('profile') ? 'class=active' : '') }}}><a href="{{url('profile') }}">Profile</a></li> 
+
+
                  <!-- Profile -->
 
                            <!-- Record -->
@@ -97,13 +102,13 @@
 
           @if(Sentinel::check())
 
-          Project Retired Smokers
+           <img src="{{ url('/')}}/images/logo-retiredsmokers-badge.png" style="width: 100px; height:100px;">Retired Smokers
 
            <!-- Hello, {{ Sentinel::getUser()->first_name }} ! -->
 
           @else
 
-            Project Retired Smokers
+            <img src="{{ url('/')}}/images/logo-retiredsmokers-badge.png" style="width: 100px; height:100px;">Retired Smokers
 
           @endif
 

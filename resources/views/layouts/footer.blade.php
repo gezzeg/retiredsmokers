@@ -1,3 +1,3 @@
  <footer class="footer">
-        <p>&copy; Company 2014</p>
+        <p>&copy; RetiredSmokers.com</p>
       </footer>
