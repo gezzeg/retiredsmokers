@@ -12,6 +12,8 @@ use App\Profile;
 
 use App\SmokingRecord;
 
+use Sentinel;
+
 class ProfileController extends Controller
 {
     /**
@@ -60,12 +62,14 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
-
         
+        if(Sentinel::check()){
 
+        $id = Sentinel::getUser()->id;
+        // $user = User::whereUserId($id);
         //getUserID
         //$user=User::whereEmail('email@email.com')->firstOrFail();
        
@@ -91,7 +95,7 @@ class ProfileController extends Controller
 
         //return dd($testrecord);
           
-
+        }
         
         
     }
