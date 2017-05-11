@@ -27,6 +27,7 @@ class CreateProfilesTable extends Migration
             $table->string('country')->nullable();
             $table->string('postcode')->nullable();
             $table->string('phone')->nullable();
+            $table->string('avatar')->default('default.jpg');
                        
             $table->timestamps();
         });
