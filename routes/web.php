@@ -72,8 +72,13 @@ Route::post('/reset/{email}/{resetCode}','ForgotPasswordController@postResetPass
 
 //Route::get('/profile',['as'=>'profile','uses'=>'ProfileController@show'])->middleware('member');
 
-Route::get('/profile/{id}',['as'=>'profileShow','uses'=>'ProfileController@show'])->middleware('member','profile');
+//Route::get('/profile/{id}',['as'=>'profileShow','uses'=>'ProfileController@show'])->middleware('member','profile');
+
+Route::get('/profile',['as'=>'profileShow','uses'=>'ProfileController@show']);
+
+
 Route::get('/profile/{id}/edit',['as'=>'profileEdit','uses'=>'ProfileController@edit'])->middleware('member','profile');
+
 Route::post('/profile/{id}/edit',['as'=>'profileUpdate','uses'=>'ProfileController@update'])->middleware('member','profile');
 
 //////////
