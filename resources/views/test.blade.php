@@ -44,7 +44,7 @@
 </script>
 <div id="result">[please wait]</div>
 
-{{ dump(obj) }}
+{{ dump($obj) }}
 
 
     </div>
