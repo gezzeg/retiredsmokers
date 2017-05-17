@@ -21,4 +21,9 @@ class PageController extends Controller
     	return view('map');
     }
 
+    public function test()
+    {
+        return view('test');
+    }
+
 }
