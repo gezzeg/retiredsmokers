@@ -23,6 +23,28 @@
 
       </div>
 
+      <script type="text/javascript"
+  src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+  var domain  = "whoapi.com"; // domain name you want to check
+  var r     = "taken";  // check availability
+  var apikey  = "demokey";  // your API key
+
+  // API call
+  $.getJSON('https://emailniaga.supersite2.myorderbox.com/api/domains/available.json?auth-userid=182065&api-key=UYnvRZLQ69TGWHajdpUttl0Qj7nfQJsA&domain-name=kendurikendara&tlds=com',
+  function(dataObj){
+    if(dataObj.status == 0){
+      // show the result
+      $('#result').html(dataObj.data);
+      }else{
+      // show error
+      $('#result').html(dataObj.status_desc);
+    }
+  });
+</script>
+<div id="result">[please wait]</div>
+
+
     </div>
 
   </div>
