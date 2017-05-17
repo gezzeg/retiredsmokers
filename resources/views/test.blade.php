@@ -45,6 +45,9 @@
 <div id="result">[please wait]</div>
 
 
+dd($viewData['obj']);
+
+
     </div>
 
   </div>
