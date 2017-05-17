@@ -23,6 +23,10 @@ class PageController extends Controller
 
     public function test()
     {
+        $json_string = 'https://test.httpapi.com/api/domains/available.json?auth-userid=182065&api-key=UYnvRZLQ69TGWHajdpUttl0Qj7nfQJsA&domain-name=ghazalitajuddin&tlds=com&tlds=net';
+        $jsondata = file_get_contents($json_string);
+        $obj = json_decode($jsondata,true);
+
         return view('test');
     }
 
