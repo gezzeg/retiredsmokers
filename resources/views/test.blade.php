@@ -44,7 +44,7 @@
 </script>
 <div id="result">[please wait]</div>
 
-{{ dd($viewData['obj']) }}
+{{ dump(obj) }}
 
 
     </div>
