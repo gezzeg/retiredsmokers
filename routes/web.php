@@ -20,7 +20,7 @@ Route::get('/',['uses'=>'PageController@index']);
 Route::get('/home',['as'=>'home','uses'=>'PageController@index']);
 Route::get('/about',['uses'=>'PageController@about']);
 Route::get('/map',['uses'=>'PageController@map']);
-Route::get('/test',['as'=>'test','uses'=>'PageController@about@test']);
+Route::get('/test',['as'=>'test','uses'=>'PageController@test']);
 
 //Route::get('/dashboard','PageController@dashboard');
 Route::get('/dashboard',function(){
