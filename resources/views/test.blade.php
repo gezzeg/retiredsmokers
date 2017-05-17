@@ -19,7 +19,7 @@
       </div>
       <div class="panel-body">
 
-        <p><a href="https://emailniaga.supersite2.myorderbox.com/api/domains/available.json?auth-userid=182065&api-key=UYnvRZLQ69TGWHajdpUttl0Qj7nfQJsA&domain-name=kendurikendara&tlds=com&tlds=net">Test</a></p>
+        <p><a href="https://test.httpapi.com/api/domains/available.json?auth-userid=182065&api-key=UYnvRZLQ69TGWHajdpUttl0Qj7nfQJsA&domain-name=ghazalitajuddin&tlds=com&tlds=net">Test</a></p>
 
       </div>
 
@@ -31,7 +31,7 @@
   var apikey  = "demokey";  // your API key
 
   // API call
-  $.getJSON('https://emailniaga.supersite2.myorderbox.com/api/domains/available.json?auth-userid=182065&api-key=UYnvRZLQ69TGWHajdpUttl0Qj7nfQJsA&domain-name=kendurikendara&tlds=com',
+  $.getJSON('https://test.httpapi.com/api/domains/available.json?auth-userid=182065&api-key=UYnvRZLQ69TGWHajdpUttl0Qj7nfQJsA&domain-name=ghazalitajuddin&tlds=com&tlds=net',
   function(dataObj){
     if(dataObj.status == 0){
       // show the result
