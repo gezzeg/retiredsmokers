@@ -19,13 +19,7 @@
       </div>
       <div class="panel-body">
 
-<p>      <img src="{{ url('/')}}/images/logo-retiredsmokers-badge.png" style="width: 300px; height:300px;"></p>
-        
-        <p>RetiredSmokers.com establish on 2013 is a Malaysian group of x-smokers who support each other who interested to quit smoking.</p>
-
-        <h4>Medium</h4>
-
-        <p>Currently we active in WhatsApp community.</p>
+<p>https://emailniaga.supersite2.myorderbox.com/api/domains/available.json?auth-userid=182065&api-key=UYnvRZLQ69TGWHajdpUttl0Qj7nfQJsA&domain-name=ghazalitajuddin&tlds=com&tlds=net</p>
 
 
 
