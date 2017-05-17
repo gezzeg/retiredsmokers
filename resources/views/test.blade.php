@@ -44,7 +44,8 @@
 </script>
 <div id="result">[please wait]</div>
 
-{{ dump($obj) }}
+
+{{  $obj["ghazalitajuddin.net"]["status"] }}
 
 
     </div>
