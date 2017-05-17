@@ -19,7 +19,7 @@
       </div>
       <div class="panel-body">
 
-<p>https://emailniaga.supersite2.myorderbox.com/api/domains/available.json?auth-userid=182065&api-key=UYnvRZLQ69TGWHajdpUttl0Qj7nfQJsA&domain-name=ghazalitajuddin&tlds=com&tlds=net</p>
+        <p>https://emailniaga.supersite2.myorderbox.com/api/domains/available.json?auth-userid=182065&api-key=UYnvRZLQ69TGWHajdpUttl0Qj7nfQJsA&domain-name=ghazalitajuddin&tlds=com&tlds=net</p>
 
       </div>
 
