@@ -27,7 +27,7 @@ class PageController extends Controller
         $jsondata = file_get_contents($json_string);
         $obj = json_decode($jsondata,true);
 
-        return view('test');
+        return view('test',compact('obj')); 
     }
 
 }
