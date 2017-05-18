@@ -46,7 +46,7 @@
 
 
 {{  $obj["ghazalitajuddin.net"]["status"] }}
-
+{{  $obj["ghazalitajuddin.com"]["status"] }}
 
     </div>
 
