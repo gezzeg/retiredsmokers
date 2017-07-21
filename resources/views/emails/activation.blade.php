@@ -1,4 +1,10 @@
+ <img src="{{ url('/')}}/images/logo-retiredsmokers-badge.png" style="width: 100px; height:100px;">
+
 <h1>Hello {{$user->first_name}}</h1>
+
+<p>
+	We have received a request to activate RetiredSmokers account associated with your email address.
+</p>
 
 <p>
 
