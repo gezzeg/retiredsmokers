@@ -24,9 +24,6 @@ class SmokingRecordController extends Controller
 
     	if(Sentinel::check()){
 			//dd(Sentinel::getUser()->id);
-
-
-
 			$id = Sentinel::getUser()->id;
         	$user = User::whereUserId($id);
         	$records = SmokingRecord::whereUserId($id)->orderBy('date', 'desc')->get();
@@ -63,11 +60,7 @@ class SmokingRecordController extends Controller
         	return view('records.timeline',compact('records'),['c'=>true]);
 		}
 
-
 			//dd(Sentinel::getUser()->id);
-
-
-
 
 /*
         $users = User::All();
