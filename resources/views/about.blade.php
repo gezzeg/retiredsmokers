@@ -8,7 +8,7 @@
 
 <div class="row">
   
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-12 col-md-offset-8">
     
     <div class="panel panel-primary">
       
