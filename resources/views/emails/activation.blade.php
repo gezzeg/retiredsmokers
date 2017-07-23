@@ -11,7 +11,7 @@
 <h1>Hello {{$user->first_name}}</h1>
 
 <p>
-	Thank you. We have received a request to activate RetiredSmokers account associated with your email address.
+	We have received a request to activate RetiredSmokers account associated with your email address.
 </p>
 
 <p>
