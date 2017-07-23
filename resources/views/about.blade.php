@@ -24,7 +24,7 @@
         
         <p>RetiredSmokers.com establish on 2013 is a Malaysian group of x-smokers who support each other who interested to quit smoking.</p>
         
-        <h4>Objective</h4>
+        <h3>Objective</h3>
 
         Our objective are
 
@@ -33,7 +33,7 @@
           <li>To be a support platform for others to quit</li>
         </ul>
 
-        <h4>Medium</h4>
+        <h3>Medium</h3>
 
         <p>Currently we active in WhatsApp community.</p>
 
