@@ -1,4 +1,12 @@
- <img src="{{ url('/')}}/images/logo-retiredsmokers-badge.png" style="width: 100px; height:100px;">
+ 
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="center">
+            <img src="{{ url('/')}}/images/logo-retiredsmokers-badge.png" style="width: 100px; height:100px;">
+
+        </td>
+    </tr>
+</table>
 
 <h1>Hello {{$user->first_name}}</h1>
 
