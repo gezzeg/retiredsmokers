@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Register')
+@section('title', 'Edit LOgin')
 
 
 @section('content')
@@ -45,7 +45,7 @@
 
 
           </div>
-
+{{-- 
           <div class="form-group">
             
             <div class="input-group">
@@ -71,7 +71,7 @@
 
 
           </div>
-
+ --}}
 <hr />
 
          <div class="form-group">
