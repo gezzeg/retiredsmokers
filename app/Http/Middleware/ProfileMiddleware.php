@@ -23,9 +23,9 @@ class ProfileMiddleware
         //3. Allow to open page
 
         $UserId=$request->id;
+       // $UserId = $request->segments()[1];
 
-
-        dd($userId);
+        dd($UserId);
         //$ProfileId = $request->segments()[1]; //boleh pakai
         //$ProfileId = $request->route()->parameter('id'); //boleh pakai
         //$profileId= Profile::find($this->route()->parameter('profileShow'));
