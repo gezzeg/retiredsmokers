@@ -26,15 +26,13 @@
         
         <h3>Objective</h3>
 
-        Our objective are
-
         <ul>
           <li>To be a platform for successful quit smokers to share their experience and knowledge.</li>
           <li>To be a platform for others who interested to quit smoking to get information on real data from successful quit smokers.</li>
-          <li>To be a platform that attract smokers to quit.</li>
+          <li>To be a platform that attract more smokers to quit.</li>
         </ul>
 
-        <h3>Medium</h3>
+        <h3>Other Medium</h3>
 
         <p>Currently we active in WhatsApp community.</p>
 
