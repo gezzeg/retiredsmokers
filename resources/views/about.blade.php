@@ -22,15 +22,16 @@
 <p>      <img src="{{ url('/')}}/images/logo-retiredsmokers-badge.png" style="width: 150px; height:150px;"></p>
 </div>
         
-        <p>RetiredSmokers.com establish on 2013 is a Malaysian group of x-smokers who support each other who interested to quit smoking.</p>
+        <p>RetiredSmokers.com has been established since 2013. It is a Malaysian group of x-smokers who support each other who interested to quit smoking.</p>
         
         <h3>Objective</h3>
 
         Our objective are
 
         <ul>
-          <li>To be a support platform for quit smokers</li>
-          <li>To be a support platform for others to quit</li>
+          <li>To be a platform for successful quit smokers to share their experience and knowledge.</li>
+          <li>To be a platform for others who interested to quit smoking to get information on real data from successful quit smokers.</li>
+          <li>To be a platform that attract smokers to quit.</li>
         </ul>
 
         <h3>Medium</h3>
