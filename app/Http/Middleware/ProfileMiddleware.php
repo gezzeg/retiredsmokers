@@ -25,7 +25,7 @@ class ProfileMiddleware
         $UserId=$request->id;
        // $UserId = $request->segments()[1];
 
-        dd($UserId);
+        //dd($UserId);
         //$ProfileId = $request->segments()[1]; //boleh pakai
         //$ProfileId = $request->route()->parameter('id'); //boleh pakai
         //$profileId= Profile::find($this->route()->parameter('profileShow'));
