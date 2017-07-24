@@ -18,6 +18,7 @@ class OwnerMiddleware
     public function handle($request, Closure $next)
     {
         
+        //1. User must be be owner
 
         $ProfileId = $request->segments()[1];
 

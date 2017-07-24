@@ -18,7 +18,14 @@ class ProfileMiddleware
     public function handle($request, Closure $next)
     {
 
+        //1. Dapatkan user ID
+        //2. Semak sama ada profile sama tak
+        //3. Allow to open page
+
         $UserId=$request->id;
+        
+
+        //dd($userId);
         //$ProfileId = $request->segments()[1]; //boleh pakai
         //$ProfileId = $request->route()->parameter('id'); //boleh pakai
         //$profileId= Profile::find($this->route()->parameter('profileShow'));
