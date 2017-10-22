@@ -11,6 +11,7 @@ class Profile extends Model
     protected $fillable = [
         'dob',
         'smoked',
+        'withdrawalSymtoms',
         'lat',
         'lng',
         'city',

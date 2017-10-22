@@ -2,20 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Sentinel;
 
 class PageController extends Controller
 {
     //
     public function index()
     {
-    	return view('home');
-    }
-   public function about()
-    {
-    	return view('about');
+        $users = User::All();
+    	return view('pages.home',compact('users'));
     }
 
+    public function dashboard(){
+
+        $id=Sentinel::getUser()->id;
+        $you=User::whereId($id)->first();
+
+        $users = User::All();
+        return view('members.index',compact('users','you'));
+    }
+
+     public function articles()
+    {
+        return view('admin.articles');
+    }
+
+    public function admin()
+    {
+        return view('adminlte');
+    }
+    
+   public function about()
+    {
+    	return view('pages.about');
+        //return view('about-new'); //
+        //return view('forms');
+
+    }
+
+    public function profile2()
+    {
+    	//return view('about');
+       //return view('about-new'); //
+        return view('admin.profile');
+
+    }
    public function map()
     {
     	return view('map');
@@ -28,6 +61,10 @@ class PageController extends Controller
         $obj = json_decode($jsondata,true);
 
         return view('test',compact('obj')); 
+    }
+
+    public function newtheme(){
+        return view('pages.newtheme');
     }
 
 }

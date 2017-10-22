@@ -86,9 +86,6 @@ class LocationController extends Controller
     {
         //
 
-
-
-        
         //if(Sentinel::check()){
             //dd(Sentinel::getUser()->id);
             $user=User::whereId(Sentinel::getUser()->id)->firstOrFail();
@@ -123,24 +120,21 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
         //
         //dd($id);//23
         //Sentinel::getUser()->id
         //dd(Sentinel::getUser()->id);
+        if(Sentinel::check()){
 
-        $user=User::whereId($id)->firstOrFail();
+            $id=Sentinel::getUser()->id;
+
+            $user=User::whereId($id)->firstOrFail();
         
+            return view('locations.edit',compact('user','map'));
 
-        //Set Up Map
-        //Mapper::map(53.381128999999990000, -1.470085000000040000,['marker'=>false]);
-        //Set Up Marker, Dragable and Listener
-        //Mapper::marker(53.381128999999990000, -1.470085000000040000, ['draggable' => true, 'eventDragEnd' => 'var lat=event.latLng.lat();var lng=event.latLng.lng(); document.getElementById("lat").value=lat; document.getElementById("lng").value=lng;']);
-
-       
-
-        return view('locations.edit',compact('user','map'));
+        }
 
     }
 
@@ -151,33 +145,35 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        
 
         if($request){
 
-        $userProfile = Profile::whereUserId($id)->firstOrFail();
-        //$userProfile->dob = $request->dob;
-        //$userProfile->smoked = $request->smoked;
-        $userProfile->lat = $request->lat;
-        $userProfile->lng = $request->lng;
-        $userProfile->city = $request->city;
-        $userProfile->country = $request->country;
-        $userProfile->postcode = $request->postcode;
-        //$userProfile->phone = $request->phone;
-        $userProfile->save();
-        
-        //return redirect()->action('ProfileController@edit');
+            if(Sentinel::check()){
 
-        //return redirect()->route('locationEdit', ['id' => 1])->with('success','Update Successful !');
-        return redirect()->back()->with('status','Update Successful!');
+                $id=Sentinel::getUser()->id;    
 
-        //->route('profile',$id)->with('success','Update Successful !');;
+            $userProfile = Profile::whereUserId($id)->firstOrFail();
+            //$userProfile->dob = $request->dob;
+            //$userProfile->smoked = $request->smoked;
+            $userProfile->lat = $request->lat;
+            $userProfile->lng = $request->lng;
+            $userProfile->city = $request->city;
+            $userProfile->state = $request->state;
+            $userProfile->country = $request->country;
+            $userProfile->postcode = $request->postcode;
+            //$userProfile->phone = $request->phone;
+            $userProfile->save();
+             
+            return redirect()->back()->with('status','Update Successful!');
+
+            }
        
        }else
-       //return redirect('/location')->with('error','Update Failed !');;
-       return redirect()->back()->withErrors('Update Failed !');
+       
+            return redirect()->back()->withErrors('Update Failed !');
     }
 
     /**

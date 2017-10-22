@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Edit LOgin')
+@section('title', 'Edit Password')
 
 
 @section('content')
@@ -10,7 +10,7 @@
   
   <div class="col-md-6 col-md-offset-3">
     
-    <div class="panel panel-primary">
+    <div class="panel panel-default">
       
       <div class="panel-heading">
         
@@ -19,7 +19,7 @@
       </div>
       <div class="panel-body">
         
-        <form action="register" method="POST">
+        <form action="" method="POST">
 
           {{csrf_field()}}
 
@@ -37,7 +37,7 @@
             
             <div class="input-group">
               
-              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 
               <input type="email" name="email" class="form-control" placeholder="{{$loginDetail->email}}" disabled="">
 
@@ -78,9 +78,9 @@
             
             <div class="input-group">
               
-              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 
-              <input type="password" name="old_password" class="form-control" placeholder="Old Password">
+              <input type="password" name="old_password" class="form-control" placeholder="Old Password" required>
 
             </div>
 
@@ -91,9 +91,9 @@
             
             <div class="input-group">
               
-              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 
-              <input type="password" name="password" class="form-control" placeholder="Password">
+              <input type="password" name="password" class="form-control" placeholder="Password" required>
 
             </div>
 
@@ -104,9 +104,9 @@
             
             <div class="input-group">
               
-              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 
-              <input type="password" name="confirm_password" class="form-control" placeholder="Password Confirmation">
+              <input type="password" name="confirm_password" class="form-control" placeholder="Password Confirmation" required>
 
             </div>
 

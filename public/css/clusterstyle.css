@@ -1,8 +1,13 @@
 
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
+
       #map {
         height: 100%;
+       /* z-index: -1000;
+        position:absolute;
+        top:0;
+        left:0;*/
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -10,18 +15,26 @@
         margin: 0;
         padding: 0;
       }
+
       .controls {
-        margin-top: 10px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
+        
+        /*margin-top: 10px;*/
+       /* border: 1px solid transparent;*/
+        /*  */
         box-sizing: border-box;
         -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+       /* height: 32px;*/
+       /* outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);*/
+
+      }
+
+      .table-cluster{
+        margin-bottom: 0 !important;
       }
 
       #pac-input {
+        /*position: absolute;*/
         background-color: #fff;
         font-family: Roboto;
         font-size: 15px;
@@ -29,7 +42,7 @@
         margin-left: 12px;
         padding: 100 11px 0 13px;
         text-overflow: ellipsis;
-        width: 300px;
+        width: 80%;
       }
 
       #pac-input:focus {
@@ -38,6 +51,7 @@
 
       .pac-container {
         font-family: Roboto;
+       
       }
 
       #type-selector {

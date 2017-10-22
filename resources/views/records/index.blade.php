@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Show Profile')
+@section('title', 'Record')
 
 
 @section('content')
@@ -14,10 +14,12 @@
   
 </style>
 
-
 <div class="row">
+
+
+        @include('records.shared.side')
   
-  <div class="col-md-12">
+  <div class="col-md-9">
             <ul>
        <li>     Do you currently attempt to quit smoking?</li>
   <li>Did you ever try to quit?</li>
@@ -26,7 +28,7 @@
   </ul>
 
     
-    <div class="panel panel-primary">
+    <div class="panel panel-default">
       
       <div class="panel-heading">
         
@@ -51,8 +53,7 @@
        <table class="table" id="table">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>User ID</th>
+            <th><input type="checkbox" name="records" id="records"></th>
             <th>Status</th>
             <th>Date</th>
             <th>Note</th>
@@ -76,8 +77,7 @@
                   </td>
                 </tr> -->
                 <tr id="record{{$record->id}}" class="record{{$record->id}}">
-                <td>{{$record->id}}</td>
-                 <td >{{$record->user_id}}</td>
+                <td><input type="checkbox" class="checkBoxClass" name="records[]" value="{{ $record->id }}"></td>
                  <td>{{ @$record->smokingStatus->name}}</td>   
                  <td>{{ $record->date}}</td>  
                  <td>{{ $record->note}}</td>         
@@ -172,7 +172,7 @@
              <div class="form-group">
               <label class="control-label col-sm-2" for="note">Note:</label>
               <div class="col-sm-10">
-                <input type="note" class="form-control" id="note">
+                <input type="note" class="form-control" id="note" placeholder="Any notes about this?">
               </div>
               </div>
 
@@ -235,9 +235,21 @@
             $('#user_id').val($(this).data('user_id'));
           // $('#smoking_statuses_id').val($(this).data('smoking_statuses_id'));
 
-           var option=$(this).data('smoking_statuses_id');
+          // var option=$(this).data('smoking_statuses_id');
+          var option;
+          
+          switch($(this).data('smoking_statuses_id')){
+          case "Attempt": option=1;
+                  break;
+          case "Quit": option=2;
+                  break;
+          case "Withdraw": option=3;
+                  break;
+          default: option=0;
+        }
 
-           $('#smoking_statuses_id option[value=option]').prop('selected', true);
+           //$('#smoking_statuses_id option[value=option]').prop('selected', true);
+            $('#smoking_statuses_id').val($(this).data('smoking_statuses_id'));
             $('#date').val($(this).data('date'));
             $('#note').val($(this).data('note'));
 
@@ -359,8 +371,9 @@
         }
 
 
-          $('#table').append("<tr class='record"+data.id+"'><td>" + data.id + "</td><td>" + data.user_id + "</td><td>" + smokeStatus + "</td><td>" + data.date + "</td><td>" + data.note + "</td><td><button class='edit-modal btn btn-info' data-id='"+ data.id + "' data-user_id='"+ data.user_id+"' data-smoking_statuses_id='"+ data.smoking_statuses_id+ "' data-date='"+data.date+"' data-note='"+data.note+"' value='"+ data.id + "'>Edit</button>        <button class='delete-modal btn btn-danger' data-id='"+ data.id + "' data-user_id='"+ data.user_id+"' data-smoking_statuses_id='"+ data.smoking_statuses_id+ "' data-date='"+data.date+"' value='"+ data.id + "'>Delete</button></td></tr>");
+          $('#table').append("<tr class='record"+data.id+"'><td>" + data.user_id + "</td><td>" + smokeStatus + "</td><td>" + data.date + "</td><td>" + data.note + "</td><td><button class='edit-modal btn btn-info' data-id='"+ data.id + "' data-user_id='"+ data.user_id+"' data-smoking_statuses_id='"+ data.smoking_statuses_id+ "' data-date='"+data.date+"' data-note='"+data.note+"' value='"+ data.id + "'>Edit</button>        <button class='delete-modal btn btn-danger' data-id='"+ data.id + "' data-user_id='"+ data.user_id+"' data-smoking_statuses_id='"+ data.smoking_statuses_id+ "' data-date='"+data.date+"' value='"+ data.id + "'>Delete</button></td></tr>");
           $(".no-record").remove();
+           location.reload(true);
 
          
 
@@ -409,7 +422,8 @@
         success: function(data){
             console.log(data);
 
-             $(".record"+data.id).replaceWith("<tr class='record"+data.id+"'><td>" + data.id + "</td><td>" + data.user_id + "</td><td>" + data.smoking_statuses_id + "</td><td>" + data.date + "</td><td>" + data.note + "</td><td><button class='edit-modal btn btn-info' data-id='"+ data.id + "' data-user_id='"+ data.user_id+"' data-smoking_statuses_id='"+ data.smoking_statuses_id+ "' data-date='"+data.date+"' data-note='"+data.note+"' value='"+ data.id + "'>Edit</button>        <button class='delete-modal btn btn-danger' data-id='"+ data.id + "' data-user_id='"+ data.user_id+"' data-smoking_statuses_id='"+ data.smoking_statuses_id+ "' data-date='"+data.date+"' value='"+ data.id + "'>Delete</button></td></tr>");
+             $(".record"+data.id).replaceWith("<tr class='record"+data.id+"'><td><input type=\"checkbox\" /></td><td>" + data.smoking_statuses_id + "</td><td>" + data.date + "</td><td>" + data.note + "</td><td><button class='edit-modal btn btn-info' data-id='"+ data.id + "' data-user_id='"+ data.user_id+"' data-smoking_statuses_id='"+ data.smoking_statuses_id+ "' data-date='"+data.date+"' data-note='"+data.note+"' value='"+ data.id + "'>Edit</button>        <button class='delete-modal btn btn-danger' data-id='"+ data.id + "' data-user_id='"+ data.user_id+"' data-smoking_statuses_id='"+ data.smoking_statuses_id+ "' data-date='"+data.date+"' value='"+ data.id + "'>Delete</button></td></tr>");
+              location.reload(true);
 
         },
         error: function(data){
@@ -440,6 +454,7 @@ $('.modal-footer').on('click', '.delete', function(e) {
             success: function(data) {
               console.log(data);
               $(".record"+$('.did').text()).remove();
+               location.reload(true);
               //$('.item' + $('.did').text()).remove();
             }
         });

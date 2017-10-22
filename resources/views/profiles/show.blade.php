@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Show')
+@section('title', 'Profile')
 
 
 @section('content')
@@ -30,7 +30,9 @@
 
 {{-- Avatar --}}
 
-  <div class="col-md-3">
+ {{-- 
+ 
+ <div class="col-md-3">
     <div class="panel panel-primary">
       
       <div class="panel-heading">
@@ -44,9 +46,12 @@
       </div>
     </div>
   </div>  
+
+  --}} 
       
 {{-- Avatar --}}
 
+{{--
   <div class="col-md-9">
     <div class="panel panel-primary">
       
@@ -82,15 +87,19 @@
 
   </div> 
 
+  --}}
+
   {{-- Profile --}}
+
+  @include('profiles.shared.side')
   
-  <div class="col-md-6">
+  <div class="col-md-5">
     
-    <div class="panel panel-primary">
+    <div class="panel panel-default">
       
       <div class="panel-heading">
         
-        <h3 class="panel-title">Profile Show : {{$userProfile->user->first_name}}</h3>
+        <h3 class="panel-title">Profile Detail</h3>
 
       </div>
       <div class="panel-body">
@@ -101,8 +110,8 @@
       <table class="table table-striped table-hover">
         <tr><th>Title</th><th>:</th><th>Desc</th></tr> 
 
-        <tr><td>Table Id</td><td>:</td><td>{{ $userProfile->id }}</td></tr>
-        <tr><td>User Id</td><td>:</td><td>{{ $userProfile->user_id }}</td></tr>
+        {{-- <tr><td>Table Id</td><td>:</td><td>{{ $userProfile->id }}</td></tr>
+        <tr><td>User Id</td><td>:</td><td>{{ $userProfile->user_id }}</td></tr> --}}
 
         <tr><td>First Name</td><td>:</td><td>{{ $userProfile->user->first_name }}</td></tr>
         <tr><td>Last Name</td><td>:</td><td>{{ $userProfile->user->last_name }}</td></tr>  
@@ -110,20 +119,21 @@
 
         <tr><td>Date Of Birth</td><td>:</td><td>{{ $userProfile->dob }}</td></tr>
         <tr><td>Have you ever smoked?</td><td>:</td><td>{{ ($userProfile->smoked)? 'Yes' : 'No' }}</td></tr>
+        <tr><td>Do you have experienced withdrawal symptoms?</td><td>:</td><td>{{ ($userProfile->withdrawal)? 'Yes' : 'No' }}</td></tr>
         {{--
         <tr><td>Lat</td><td>:</td><td>{{ $userProfile->lat }}</td></tr>
         <tr><td>Lng</td><td>:</td><td>{{ $userProfile->lng }}</td></tr>
                         --}}
 
-        <tr><td>City</td><td>:</td><td>{{ $userProfile->city }}</td></tr>
-        <tr><td>Country</td><td>:</td><td>{{ $userProfile->country }}</td></tr>
-        <tr><td>Postcode</td><td>:</td><td>{{ $userProfile->postcode }}</td></tr>
+       
         <tr><td>Phone</td><td>:</td><td>{{ $userProfile->phone }}</td></tr>
 
       </table>
 
 
-      <a  class="btn btn-primary pull-right" role="button" href="{{ URL::to('profile/'. $userProfile->user_id.'/edit') }}">Edit</a>
+      {{-- <a  class="btn btn-primary pull-right" role="button" href="{{ URL::to('profile/'. $userProfile->user_id.'/edit') }}">Edit</a> --}}
+
+      <a  class="btn btn-primary pull-right" role="button" href="{{ URL::to('profile/edit') }}">Edit</a>
 
       </div>
 
@@ -136,9 +146,9 @@
 
  {{-- Location --}}
 
-  <div class="col-md-6">
+  <div class="col-md-4">
     
-    <div class="panel panel-primary">
+    <div class="panel panel-default">
       
       <div class="panel-heading">
         
@@ -164,18 +174,16 @@
         <tr><th>Title</th><th>:</th><th>Desc</th></tr> 
         
         
-        <tr><td>Lat</td><td>:</td><td>{{ $userProfile->user->profile->lat }}</td></tr>
-        <tr><td>Lng</td><td>:</td><td>{{ $userProfile->user->profile->lng }}</td></tr>
-{{-- 
-        <tr><td>City</td><td>:</td><td>{{ $user->profile->city }}</td></tr>
-        <tr><td>Country</td><td>:</td><td>{{ $user->profile->country }}</td></tr>
-        <tr><td>Postcode</td><td>:</td><td>{{ $user->profile->postcode }}</td></tr>
---}}               
+        <tr><td>Lat</td><td>:</td><td>{{ $userProfile->lat }}</td></tr>
+        <tr><td>Lng</td><td>:</td><td>{{ $userProfile->lng }}</td></tr>
+         <tr><td>City</td><td>:</td><td>{{ $userProfile->city }}</td></tr>
+        <tr><td>Country</td><td>:</td><td>{{ $userProfile->country }}</td></tr>
+        <tr><td>Postcode</td><td>:</td><td>{{ $userProfile->postcode }}</td></tr>       
 
       </table>
 
 
-      <a  class="btn btn-primary pull-right" role="button" href="{{ URL::to('location/'. $userProfile->user_id.'/edit') }}">Edit</a>
+      <a  class="btn btn-primary pull-right" role="button" href="{{ URL::to('location/edit') }}">Edit</a>
 
 
       </div>

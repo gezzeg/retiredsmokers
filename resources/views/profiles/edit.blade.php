@@ -7,14 +7,16 @@
 
 
 <div class="row">
+
+  @include('profiles.shared.side')
   
-  <div class="col-md-12">
+  <div class="col-md-9">
     
-    <div class="panel panel-primary">
+    <div class="panel panel-default">
       
       <div class="panel-heading">
         
-        <h3 class="panel-title">Edit Profile : {{ $userProfile->user_id }}</h3>
+        <h3 class="panel-title">Edit Profile {{ $userProfile->user->first_name }}</h3>
 
       </div>
       <div class="panel-body">
@@ -77,6 +79,27 @@
       
 
           </div></td></tr>
+
+        <tr><td>Do you have experienced withdrawal symptoms?</td><td>:</td><td>
+
+
+            
+  
+
+            <div class="input-group">
+           
+                
+           <div class="radio">
+          <label><input type="radio" name="withdrawal" value="1" required {{ ($userProfile->withdrawal == '1')? 'checked' : ''}}>Yes</label>
+          </div>     
+
+          <div class="radio">
+            <label><input type="radio" name="withdrawal" value="0" required {{ ($userProfile->withdrawal == '0')? 'checked' : ''}}>No</label>
+          </div>
+
+      
+
+          </div></td></tr>          
 {{-- 
         <tr><td>Lat</td><td>:</td><td>
 
@@ -93,7 +116,7 @@
 
 --}}
 
-        <tr><td>City</td><td>:</td><td>
+       {{--  <tr><td>City</td><td>:</td><td>
 
         <input type="text" name="city" class="form-control" placeholder="City" value="{{ $userProfile->city }}">
 
@@ -113,13 +136,16 @@
 
         <input type="text" name="phone" class="form-control" placeholder="Phone" value="{{ $userProfile->phone }}">
 
-        </td></tr>
+        </td></tr> --}}
 
       </table>
 
+    
+     <a href="{{ url('/profile') }}" class="btn btn-primary  pull-right" style="margin-right:5px;margin-left: 5px" title="">Back</a>
 
-      
       <input type="submit" class="btn btn-primary pull-right" name="submit" value="Update">
+
+       
 
       </form>
 

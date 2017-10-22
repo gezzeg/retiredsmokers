@@ -1,0 +1,13 @@
+
+container{
+	position: relative;
+	z-index: 1;
+}
+
+.footer{
+	text-align: center;
+}
+
+ul.symptom-settings{
+	list-style-type: none;
+}

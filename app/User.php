@@ -62,6 +62,26 @@ class User extends Authenticatable
         return $this->hasMany('App\SmokingRecord');
     }
 
+    public function symptomRecord()
+    {
+        return $this->hasMany('App\SymptomRecord');
+    }
+
+    public function post()
+    {
+        return $this->hasOne('App\Post');
+    }
+
+    public function getFirstNameAttribute($value)
+    {
+        return ucwords($value);
+    }
+
+    public function getLastNameAttribute($value)
+    {
+        return ucwords($value);
+    }
+
    /*
    
     public function isAdmin()

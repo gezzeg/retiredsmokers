@@ -10,7 +10,7 @@
   
   <div class="col-md-6 col-md-offset-3">
     
-    <div class="panel panel-primary">
+    <div class="panel panel-default">
       
       <div class="panel-heading">
         
@@ -43,7 +43,7 @@
             
             <div class="input-group">
               
-              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 
               <input type="email" name="email" class="form-control" placeholder="email@example.com" required>
 
@@ -57,7 +57,7 @@
             
             <div class="input-group">
               
-              <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
 
               <input type="password" name="password" class="form-control" placeholder="Password" required>
 

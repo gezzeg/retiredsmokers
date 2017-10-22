@@ -102,7 +102,9 @@ class RegistrationController extends Controller
 
 			return redirect()->back()->with('status','Registration Successful! Pleace check your email.');
 		}else{
-			return redirect()->back()->with('error','Registration Failed !');
+			return redirect()->back()
+			->with('error','Registration Failed !')
+			->withInput(Request::except('password'));
 			//return back()->withErrors($validator);
 		}
 

@@ -5,6 +5,13 @@
     <meta charset="utf-8">
     <title>Places Searchbox</title>
 
+ <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="{!! asset('bootstrap-3.3.7/css/bootstrap.min.css') !!}">
+
+    <!-- RetiredSmokers CSS -->
+    <link rel="stylesheet" type="text/css" href="{!! asset('css/retiredsmokers.css') !!}">
+
+
 @if(Route::is('locationCluster'))
     <link href="{{ asset('css/clusterstyle.css') }}" media="all" rel="stylesheet" type="text/css" />
      <script type="text/javascript" src="{!! asset('js/googlemap/cluster/src/markerclusterer.js') !!}"></script>
@@ -15,45 +22,192 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
-    
+   {{--  https://bootsnipp.com/snippets/featured/collapsible-panel --}}
 
 <style>
   
-   #over_map { 
-    position: absolute; 
-    background-color: white;
-    top: 10px; 
+   #over_map2 { 
+    text-align: center;
+    /*background-color: blue;*/
+    /*position: absolute; 
+   background-color: white;
+    top: 510px; 
     left: 10px; 
-    z-index: 99; 
-   
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    z-index: 99; */
+        width: 300px;
+      /* height: 350px;*/
+        /*background-color: white;*/
+
+        position:fixed; /*it can be fixed too*/
+        left:0; right:0;
+        top:0; bottom:0;
+        margin:auto;
+
+        /*this to solve "the content will not be cut when the window is smaller than the content": */
+        max-width:80%;
+        /*max-height:45%;*/
+        overflow:auto;
+
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        /*border-radius: 15px;*/
   }
 
-  #panel{
-     margin: 10px;
+  #over_map{
+    position: absolute;
+    width:300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #panel2{
+  position:relative;
+  text-align: center;
+  /*background-color: yellow;*/
+  width:100%;
+   /*  margin: 10px;
     padding: 10px;
-    padding:10px;
+    padding:10px;*/
+text-align: center;
+
   }
 
- 
+/* Collapsible Panel */
+  #panel{
+  text-align: center;
+  }
+
+ .row{
+    margin-top:40px;
+    padding: 0 10px;
+}
+
+.clickable{
+    cursor: pointer;   
+}
+
+.panel-heading span {
+  margin-top: -20px;
+  font-size: 15px;
+}
+/* Collapsible Panel */
 
 </style>
+
+<script>
+  
+  $(document).on('click', '.panel-heading span.clickable', function(e){
+    var $this = $(this);
+  if(!$this.hasClass('panel-collapsed')) {
+    $this.parents('.panel').find('.table').slideUp();
+    $this.addClass('panel-collapsed');
+    $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+  } else {
+    $this.parents('.panel').find('.table').slideDown();
+    $this.removeClass('panel-collapsed');
+    $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+  }
+})
+
+</script>
   </head>
   <body>
    
-<input id="pac-input" class="controls" type="text" placeholder="Search Box"> 
+{{-- <input id="pac-input" class="controls2" type="text" placeholder="Search Box">  --}}
     
+{{-- <div class="container-fluid>
+  <div class="row">
+    asdasdasds
+  </div>
+</div> --}}
+
+
     <div id="map"></div>
   
 
+  <div class="panel panel-primary" id="over_map">
+     <div class="panel-heading">
+    <h3 class="panel-title">Drag Me Panel</h3><span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+  </div>
 
-    <div id="over_map">
+    <div id="panel">
+
+<table class="table table-striped table-cluster">
+  {{-- <thead>
+    <tr>
+      <th colspan="2">Panel</th>
+    </tr>
+  </thead> --}}
+  <tbody>
+   
+    <tr>
+        <td><a href="{{ url('/') }}" class="btn btn-default" title="">Home</a></td>
+        <td><a href="{{ url('/dashboard') }}" class="btn btn-default" title="">Dashboard</a></td>
+        <td><input type="button" class="btn btn-default" id="reset_state" value="Reset" /> </td>
+
+    </tr>
+     <tr>
+        <td colspan="3">
+          
+          <div class="form-group">
+            
+              <label for="location">Location</label>
+            <div class="form-conrol">
+              <input id="pac-input" class="controls" type="text" placeholder="Insert Location"> 
+            </div>
+          </div>
+        </td>
+
+    </tr>
+   {{--  <tr>
+        <td colspan="2">
+          
+          <div class="form-group">
+            
+              <label for="location">Members</label>
+            <div class="form-conrol">
+              <input id="" class="controls" type="text" placeholder="Members"> 
+            </div>
+          </div>
+        </td>
+        
+    </tr> --}}
+
+ <tr>
+        <td colspan="3">
+          
+          © RetiredSmokers.com
+
+        </td>
+        
+    </tr> 
+
+  </tbody>
+</table>
+
+    
+        
+       
+       
+         
+
+        
+    </div>
+    {{--  <div class="panel-footer">Panel footer</div> --}}
+  </div>
+
+
+   {{--  <div id="over_map">
       <div id="panel">
         <h3>HEADER</h3>
-        <a href="{{ url('home')}}">Home</a>
-        <input id="" type="text" placeholder="Search Box">  
+        
+        <a class="" href="{{ url('home')}}">Home</a>
+       
+        <input id="" type="text" placeholder="Search Box">  <input type="button" class="btn btn-default" id="reset_state" value="Reset Position " /> <br>
+
+        <input id="pac-input" class="controls" type="text"> 
       </div>
-    </div>
+    </div> --}}
 
 
 
@@ -61,89 +215,11 @@
 
 
     $(function(){
-    $( "#over_map" ).draggable();
-  } );
+      $( "#over_map" ).draggable();
+    });
    
 
 
-
-
-      function initMap() {
-
-
-     
-
-    var map;
-    var bounds = new google.maps.LatLngBounds();
-    var mapOptions = {
-    	zoom:2,
-        mapTypeId: 'roadmap',
-        styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#ffdfa6"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#b52127"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#c5531b"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#74001b"},{"lightness":-10}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#da3c3c"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#74001b"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#da3c3c"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#990c19"}]},{"elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"elementType":"labels.text.stroke","stylers":[{"color":"#74001b"},{"lightness":-8}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#6a0d10"},{"visibility":"on"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#ffdfa6"},{"weight":0.4}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]}]
-
-    };
-                    
-    // Display a map on the web page
-    map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    map.setTilt(50);
-        
-    // Multiple markers location, latitude, and longitude
-    var markers = [
-
-    	@foreach($users as $user)
-
-    	['{{$user->first_name}}',{{$user->profile->lat}},{{$user->profile->lng}}],
-
-    	@endforeach
-
-       /* ['Brooklyn Museum, NY', 40.671531, -73.963588],
-        ['Brooklyn Public Library, NY', 40.672587, -73.968146],
-        ['Prospect Park Zoo, NY', 40.665588, -73.965336],
-        ['Kuantan',3.7633430771966627,103.21979656190183]*/
-    ];
-                        
-    // Info window content
-    var infoWindowContent = [
-
-    	@foreach($users as $user)
-
-    	['{{$user->first_name}}'],
-
-    	@endforeach
-       
-       
-    ];
-        
-    // Add multiple markers to map
-    var infoWindow = new google.maps.InfoWindow(), marker, i;
-    
-    // Place each marker on the map  
-    for( i = 0; i < markers.length; i++ ) {
-        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-        bounds.extend(position);
-        marker = new google.maps.Marker({
-            position: position,
-            map: map,
-            title: markers[i][0]
-        });
-        
-        // Add info window to marker    
-        google.maps.event.addListener(marker, 'click', (function(marker, i) {
-            return function() {
-                infoWindow.setContent(infoWindowContent[i][0]);
-                infoWindow.open(map, marker);
-            }
-        })(marker, i));
-
-        // Center the map to fit all markers on the screen
-        map.fitBounds(bounds);
-    }
-
-    // Set zoom level
-    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {this.setZoom(2);google.maps.event.removeListener(boundsListener);
-    });
-
-    
-}
 
 function initialize() {
        var center = new google.maps.LatLng(0.0, 0.0);
@@ -151,6 +227,10 @@ function initialize() {
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 2,
          center: center,
+         zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL,
+        position: google.maps.ControlPosition.RIGHT_CENTER
+      },
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           styles:[{"featureType":"administrative","elementType":"all","stylers":[{"visibility":"on"},{"lightness":33}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2e5d4"}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#c5dac6"}]},{"featureType":"poi.park","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":20}]},{"featureType":"road","elementType":"all","stylers":[{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"color":"#c5c6c6"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#e4d7c6"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#fbfaf7"}]},{"featureType":"water","elementType":"all","stylers":[{"visibility":"on"},{"color":"#acbcc9"}]}]
 
@@ -160,20 +240,20 @@ function initialize() {
 
         @foreach($users as $user)
 
-        ['{{$user->first_name}}',{{$user->profile->lat}},{{$user->profile->lng}}],
+        ['<a href="">{{$user->first_name}}</a>',{{$user->profile->lat}},{{$user->profile->lng}}],
 
       @endforeach
 
         ];
 
-        var markers3 = [
-        [51.5074, 10.1278],
-        [51.5074, 20.1278],
-        [51.5074, 30.1278],
-        [51.5074, 40.1278],
-        [51.5074, 50.1278],
+        // var markers3 = [
+        // [51.5074, 10.1278],
+        // [51.5074, 20.1278],
+        // [51.5074, 30.1278],
+        // [51.5074, 40.1278],
+        // [51.5074, 50.1278],
 
-        ];
+        // ];
 
         // Info window content
         var infoWindowContent = [
@@ -201,6 +281,7 @@ function initialize() {
             
             markers.push(marker);
 
+
              // Add info window to marker    
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
@@ -212,46 +293,38 @@ function initialize() {
         
         }
         
-        /*
 
-         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(51.5074, 10.1278)
-        });
-        markers.push(marker);
+         //
+          // call center map
+          center_map(map,markers2);
 
-         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(51.5074, 20.1278)
-        });
-        markers.push(marker);
-         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(51.5074, 30.1278)
-        });
-        markers.push(marker);
-         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(51.5074, 40.1278)
-        });
-        markers.push(marker);
-         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(51.5074, 50.1278)
-        });
-        markers.push(marker);
-
-        */
-
-
-
+       $("#reset_state").click(function() {
+      //infowindow.close();
+      
+      center_map(map,markers2);
+      })
+    
 
         var options = {
             imagePath: '{{ URL::to('/')}}/js/googlemap/cluster/images/m'
         };
 
+        //Adding marker Clusterer
         var markerCluster = new MarkerClusterer(map, markers, options); 
 
-//SEARCHBOX START///////////////////////////////////////////////////////////////////
+        
+
+        searchbox(map);
+     
+    } 
+
+
+  function searchbox(map){
+    //SEARCHBOX START///////////////////////////////////////////////////////////////////
         // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
         // Bias the SearchBox results towards current map's viewport.
         map.addListener('bounds_changed', function() {
@@ -259,6 +332,10 @@ function initialize() {
         });
 
         var markers = [];
+
+
+
+ 
 
         // Listen for the event fired when the user selects a prediction and retrieve
         // more details for that place.
@@ -307,12 +384,47 @@ function initialize() {
               bounds.extend(place.geometry.location);
             }
           });
+
           map.fitBounds(bounds);
+         
+    
+        
+
         });
-//SEARCHBOX END///////////////////////////////////////////////////////////////////        
-    } 
+//SEARCHBOX END///////////////////////////////////////////////////////////////////   
+  }  
 
+//SETCENTER START/////////////////////////////////////////////////////////////////// 
+//Reference: 
+//1. http://jsfiddle.net/geocodezip/8q0g2ow8/4/
+//2. https://stackoverflow.com/questions/9156909/map-markers-is-undefined-google-map-api-v3
+//
+  function center_map(map,markers) {
+    // vars
+    bounds = new google.maps.LatLngBounds();
+    
 
+    // loop through all markers and create bounds
+    for( i = 0; i < markers.length; i++ ){
+      
+            
+            var latlng = new google.maps.LatLng(markers[i][1], markers[i][2]);
+            bounds.extend(latlng);
+           
+        }
+
+    // only 1 marker?
+    if (markers.length == 1) {
+      // set center of map
+      map.setCenter(bounds.getCenter());
+      map.setZoom(16);
+    } else {
+      // fit to bounds
+      map.fitBounds(bounds);
+    }
+  }
+
+//SETCENTER END/////////////////////////////////////////////////////////////////// 
 
 
 // Load initialize function

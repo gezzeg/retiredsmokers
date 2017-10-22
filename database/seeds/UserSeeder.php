@@ -12,9 +12,17 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        
+        /*DB::table('users')->insert([
+            'email' => 'mr.ghazali@gmail.com',         
+            'first_name' => 'ghazali',
+            'last_name' => 'tajuddin',
+            'password' => Hash::make('test1234'),
+        ]); */
+
         //
 
-        $faker = Faker::create();
+        //$faker = Faker::create();
 
         /*
         factory(App\User::class,10)->create([
@@ -25,7 +33,7 @@ class UserSeeder extends Seeder
 		]);
 		*/
 		
-       for($i=1;$i<=10;$i++){
+       /*for($i=1;$i<=10;$i++){
     	
         DB::table('users')->insert([
             'email' => $faker->unique()->safeEmail,        	
@@ -34,7 +42,7 @@ class UserSeeder extends Seeder
             'password' => bcrypt('secret'),
         ]);  
         
-        }
+        }*/
         
 
          

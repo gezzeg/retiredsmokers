@@ -24,11 +24,10 @@ class ProfileController extends Controller
     public function index()
     {
         //
+        $users=User::All();
+        $profiles=Profile::All();
 
-    $users=User::All();
-    $profiles=Profile::All();
-
-    return view('profiles.index',compact('users','profiles'));  
+        return view('profiles.index',compact('users','profiles'));  
 
 
     }
@@ -105,13 +104,22 @@ class ProfileController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     * 
+     * public function edit($id)
+     * 
      */
-    public function edit($id)
+    public function edit()
     {
-        //
-        $userProfile=Profile::whereUserId($id)->firstOrFail();
+        if(Sentinel::check()){
 
-        return view('profiles.edit',compact('userProfile'));
+            //get user id from sentinel
+            $id = Sentinel::getUser()->id;
+
+            $userProfile=Profile::whereUserId($id)->firstOrFail();
+
+            return view('profiles.edit',compact('userProfile'));
+
+        }
 
     }
 
@@ -121,10 +129,16 @@ class ProfileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
+     *
+     * public function update(ProfileFormRequest $request, $id)
+     * 
      */
-    public function update(ProfileFormRequest $request, $id)
+    public function update(ProfileFormRequest $request)
     {
-        //
+        if(Sentinel::check()){
+
+            //get user id from sentinel
+            $id = Sentinel::getUser()->id;
 
         //return dd($request,$id);
 
@@ -142,11 +156,12 @@ class ProfileController extends Controller
         
         $userProfile->dob = $request->dob;
         $userProfile->smoked = $request->smoked;
+        $userProfile->withdrawal = $request->withdrawal;
         //$userProfile->lat = $request->lat;
         //$userProfile->lng = $request->lng;
-        $userProfile->city = $request->city;
-        $userProfile->country = $request->country;
-        $userProfile->postcode = $request->postcode;
+        // $userProfile->city = $request->city;
+        // $userProfile->country = $request->country;
+        // $userProfile->postcode = $request->postcode;
         $userProfile->phone = $request->phone;
         $userProfile->save();
 
@@ -173,6 +188,8 @@ class ProfileController extends Controller
         
 
         //Profile::where('user_id', $id)->update($request->all());
+        
+        } //end else sentinel check
 
     }
 

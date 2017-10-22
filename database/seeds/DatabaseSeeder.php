@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        //$this->call(UserSeeder::class);
 
 		//factory(App\User::class,10)->create();
        //	$this->call(SmokingStatusSeeder::class);
@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
 		$this->call(SmokingStatusSeeder::class);
 		//$this->call(SmokingRecordSeeder::class);
 		$this->call(RoleSeeder::class);
+        $this->call(SymptomsSeeder::class);
 
 
 
