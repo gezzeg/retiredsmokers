@@ -18,15 +18,23 @@
         
         <h3>Objective</h3>
 
-        <ul>
-          <li>To be a platform for successful quit smokers to share their experience and knowledge.</li>
-          <li>To be a platform for others who interested to quit smoking to get information on real data from successful quit smokers.</li>
-          <li>To be a platform that attract more smokers to quit.</li>
-        </ul>
+        To be a platform for successful quit smokers to share their experience and knowledge.
 
-        <h3>Other Medium</h3>
+        To be a platform for others who interested to quit smoking to get information on real data from successful quit smokers.
 
-        <p>Currently we active in WhatsApp community.</p>
+        To get more friends!
+
+        <h3>Support</h3>
+
+        WhatsApp +6016921202
+
+        <h3>Developer</h3>
+
+        <a href="http://www.ghazalitajuddin.com" title="">xxx</a>
+
+        {{-- <h3>Other Medium</h3>
+
+        <p>Currently we active in WhatsApp community.</p> --}}
 
 
   
