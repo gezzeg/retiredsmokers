@@ -95,7 +95,8 @@
                                 action="{{ url('/logout') }}" 
                             method="POST" 
                             style="display: none;">
-                                        {{ csrf_field() }}
+                                        {{-- {{ csrf_field() }} --}}
+                                        <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                           </form>
                            </li>
 
