@@ -16,7 +16,17 @@ Please click the following link to activate your account
 
 {{-- <a href="{{ env('APP_URL')}}/retiredsmokers/public/activation/{{$user->email}}/{{$activationCode}}" title="">Activate Account</a> --}}
 
-	<a href="{{ env('APP_URL')}}/activation/{{$user->email}}/{{$activationCode}}" title="">Activate Account</a>
+	<a href="{{ env('APP_URL')}}/activation/{{$user->email}}/{{$activationCode}}" title="" style="a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: verdana;
+};a:hover, a:active {
+    background-color: red;
+};">Activate Account</a>
 
 </p>
 
