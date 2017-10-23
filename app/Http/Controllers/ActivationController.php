@@ -52,7 +52,7 @@ class ActivationController extends Controller
             ['user'=>$user], 
             function($message) use ($user){
                 $message->from(env('MAIL_USERNAME'),'RetiredSmokers.com');
-                $message->to(env('MAIL_USERNAME'));
+                $message->to(env('MAIL_ADMIN'));
                 $message->subject("Hello Admin, there are new member!");
 
             }
