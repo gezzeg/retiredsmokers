@@ -1,7 +1,7 @@
  
  <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-        <td align="">
+        <td align="center">
              <img class="" src="{{ url('/')}}/images/retiredsmokerslogo.png" style="width: 150px; height:150px;">
 
              <h1>Hello {{$user->first_name}},</h1>
