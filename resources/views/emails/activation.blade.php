@@ -1,14 +1,14 @@
  
  <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-        <td align="center">
-            <img src="{{ url('/')}}/images/logo-retiredsmokers-badge.png" style="width: 100px; height:100px;">
+        <td align="">
+             <img class="" src="{{ url('/')}}/images/retiredsmokerslogo.png" style="width: 150px; height:150px;">
 
         </td>
     </tr>
 </table>
 
-<h1>Hello {{$user->first_name}}</h1>
+<h1>Hello {{$user->first_name}},</h1>
 
 <p>
 	We have received a request to activate RetiredSmokers account associated with your email address.
