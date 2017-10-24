@@ -42,6 +42,10 @@ class PageController extends Controller
 
     }
 
+    public function disclaimer(){
+        return view('pages.disclaimer');
+    }
+
     public function profile2()
     {
     	//return view('about');

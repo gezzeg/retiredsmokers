@@ -19,6 +19,7 @@
 
 Route::get('/home',['as'=>'home','uses'=>'PageController@index']);
 Route::get('/about',['uses'=>'PageController@about']);
+Route::get('/disclaimer',['as'=>'pages.disclaimer','uses'=>'PageController@disclaimer']);
 Route::get('/aboutnew',['uses'=>'PageController@aboutnew']);
 Route::get('/map',['uses'=>'PageController@map']);
 Route::get('/test',['as'=>'test','uses'=>'PageController@test']);
