@@ -115,7 +115,7 @@
                 <!-- <li role="presentation" {{{ (Request::is('login') ? 'class=active' : '') }}}><a href="{{ url('login')}}">Login</a></li>
              -->
                 <!-- Register -->
-                <li role="presentation" {{{ (Request::is('register') ? 'class=active' : '') }}}><a href="{{ url('register')}}">Register</a></li>
+                <!-- <li role="presentation" {{{ (Request::is('register') ? 'class=active' : '') }}}><a href="{{ url('register')}}">Register</a></li> -->
 
             @endif
 
