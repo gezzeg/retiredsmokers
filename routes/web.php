@@ -35,7 +35,7 @@ Route::get('/',['uses'=>'PageController@index']);
 //Registration
 //////////////
 
-Route::get('/register',['uses'=>'RegistrationController@register']);
+//Route::get('/register',['uses'=>'RegistrationController@register']);
 Route::post('/register',['uses'=>'RegistrationController@postRegister']);
 
 ////////////
@@ -48,7 +48,7 @@ Route::get('/activation/{email}/{activationCode}',['as'=>'activation','uses'=>'A
 //Login
 ///////
 
-Route::get('/login',['uses'=>'LoginController@login']);
+//Route::get('/login',['uses'=>'LoginController@login']);
 Route::post('/login',['uses'=>'LoginController@postLogin']);
 Route::get('/login/edit',['as'=>'passwod.edit','uses'=>'LoginController@edit'])->middleware('member');
 Route::post('/login/edit',['uses'=>'LoginController@update'])->middleware('member');
